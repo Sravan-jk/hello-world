@@ -1,0 +1,20 @@
+
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: webapp
+spec:
+  replicas: 3
+  selector:
+    app: webapp
+    version: "1.0"
+  template:
+    metadata:
+      labels:
+        app: webapp
+        version: "1.0"
+  spec:
+    - image: sravan5432/$JOB_NAME:latest
+      name: webapp_pod
+      ports:
+      - containerPort: 8080

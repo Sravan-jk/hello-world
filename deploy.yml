@@ -1,0 +1,24 @@
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name:  webapp_deploy
+  labels:
+    app:  webapp
+spec:
+  replicas: 3
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        name:  webapp
+    spec:
+      containers:
+      - image:  sravan5432/$JOB_NAME:latest
+        name:  webapp
+        ports:
+        - containerPort: 80
