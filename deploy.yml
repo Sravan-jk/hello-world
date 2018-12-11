@@ -2,7 +2,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name:  webapp_deploy
+  name:  webapp-deploy
   labels:
     app:  webapp
 spec:
