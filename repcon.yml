@@ -13,8 +13,9 @@ spec:
       labels:
         app: webapp
         version: "1.0"
-  spec:
-    - image: sravan5432/$JOB_NAME:latest
-      name: webapp_pod
-      ports:
-      - containerPort: 8080
+    spec:
+      containers:
+      - image: sravan5432/$JOB_NAME:latest
+        name: webapp-pod
+        ports:
+        - containerPort: 8080
